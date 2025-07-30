@@ -83,12 +83,21 @@ const LocationSection = () => {
                   <Phone className="w-6 h-6 text-accent mt-1" />
                   <div>
                     <h3 className="font-heading font-bold text-lg text-accent mb-2">Contatti</h3>
-                    <p className="font-body text-foreground mb-1">
-                      <a href="tel:+393476735353" className="hover:text-accent transition-colors">
-                        347 67 35 353
-                      </a>
-                    </p>
-                    <p className="text-sm text-muted-foreground">Telefono e WhatsApp</p>
+                    <div className="space-y-2">
+                      <p className="font-body text-foreground">
+                        <span className="font-medium">Franco:</span>{' '}
+                        <a href="tel:+393476735353" className="hover:text-accent transition-colors">
+                          347 67 35 353
+                        </a>
+                      </p>
+                      <p className="font-body text-foreground">
+                        <span className="font-medium">Dennis:</span>{' '}
+                        <a href="tel:+393406914883" className="hover:text-accent transition-colors">
+                          340 69 14 883
+                        </a>
+                      </p>
+                    </div>
+                    <p className="text-sm text-muted-foreground mt-2">Telefono e WhatsApp</p>
                   </div>
                 </div>
                 

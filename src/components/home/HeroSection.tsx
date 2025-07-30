@@ -23,11 +23,11 @@ const HeroSection = () => {
             <p className="text-sm text-muted-foreground flex items-center justify-center gap-2">
               <strong>Chiama ora:</strong>
               <a 
-                href="tel:+393406914883"
+                href="tel:+393476735353"
                 className="text-accent hover:text-accent/80 transition-colors font-medium flex items-center gap-1"
               >
                 <Phone className="w-4 h-4" />
-                340 69 14 883
+                347 67 35 353
               </a>
             </p>
           </div>
