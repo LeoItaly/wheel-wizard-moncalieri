@@ -117,13 +117,14 @@ const LocationSection = () => {
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <a 
                   href="tel:+393476735353"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-accent text-accent-foreground rounded-full font-body font-semibold hover:bg-accent/90 transition-colors"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-accent text-accent-foreground rounded-full font-body font-semibold hover:bg-accent/90 transition-colors w-full sm:w-auto"
                 >
+                  <Phone className="w-4 h-4 mr-2" />
                   Chiama Ora
                 </a>
                 <button 
                   onClick={() => openWhatsApp()}
-                  className="inline-flex items-center justify-center px-6 py-3 bg-green-600 text-white rounded-full font-body font-semibold hover:bg-green-700 transition-colors group relative"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-green-600 text-white rounded-full font-body font-semibold hover:bg-green-700 transition-colors group relative w-full sm:w-auto"
                 >
                   <FontAwesomeIcon icon={['fab', 'whatsapp']} className="w-4 h-4 mr-2" />
                   WhatsApp

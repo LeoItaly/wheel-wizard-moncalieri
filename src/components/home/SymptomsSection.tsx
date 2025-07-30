@@ -1,4 +1,4 @@
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, Phone } from "lucide-react";
 import BodyText from "../ui/BodyText";
 import { openWhatsApp } from "../../lib/utils";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -62,16 +62,17 @@ const SymptomsSection = () => {
                 <BodyText className="mb-4">
                   è il tuo cerchio che ti sta chiedendo aiuto. Rivolgiti al Fabbro Schettino, l'unico che ha transformato l'esperienza in una nuova tecnologia per la riparazione dei cerchi in lega.
                 </BodyText>
-                <div className="flex flex-wrap gap-4">
+                <div className="flex flex-col sm:flex-row gap-4">
                   <a 
                     href="tel:+393476735353"
-                    className="inline-flex items-center px-6 py-3 bg-accent text-accent-foreground rounded-full font-body font-semibold hover:bg-accent/90 transition-colors"
+                    className="inline-flex items-center justify-center px-6 py-3 bg-accent text-accent-foreground rounded-full font-body font-semibold hover:bg-accent/90 transition-colors w-full sm:w-auto"
                   >
-                    Chiama Ora: 347 67 35 353
+                    <Phone className="w-4 h-4 mr-2" />
+                    Chiama Ora
                   </a>
                   <button 
                     onClick={() => openWhatsApp("Ciao! Ho notato alcuni sintomi nei miei cerchi e vorrei un consulto.")}
-                    className="inline-flex items-center px-6 py-3 bg-green-600 text-white rounded-full font-body font-semibold hover:bg-green-700 transition-colors group relative"
+                    className="inline-flex items-center justify-center px-6 py-3 bg-green-600 text-white rounded-full font-body font-semibold hover:bg-green-700 transition-colors group relative w-full sm:w-auto"
                   >
                     <FontAwesomeIcon icon={['fab', 'whatsapp']} className="w-4 h-4 mr-2" />
                     WhatsApp
