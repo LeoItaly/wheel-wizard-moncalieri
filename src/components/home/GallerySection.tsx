@@ -2,12 +2,30 @@ import SectionTitle from "../ui/SectionTitle";
 
 const GallerySection = () => {
   const images = [
-    { id: 1, alt: "Cerchio in lega prima della riparazione" },
-    { id: 2, alt: "Processo di saldatura cerchi" },
-    { id: 3, alt: "Tornitura e molatura cerchi" },
-    { id: 4, alt: "Verniciatura cerchi in lega" },
-    { id: 5, alt: "Diamantatura cerchi finita" },
-    { id: 6, alt: "Cerchio riparato risultato finale" }
+    {
+      id: 1,
+      src: "/assets/homepage/cerchione.webp",
+      alt: "Cerchio in lega danneggiato prima della riparazione - Officina Schettino Moncalieri",
+      title: "Cerchio danneggiato prima della riparazione"
+    },
+    {
+      id: 2,
+      src: "/assets/homepage/cerchione-2.webp",
+      alt: "Processo di riparazione cerchi in lega - Saldatura professionale a Moncalieri",
+      title: "Processo di saldatura cerchi"
+    },
+    {
+      id: 3,
+      src: "/assets/homepage/fabbro.webp",
+      alt: "Tornitura e molatura cerchi in lega - Lavorazione di precisione Torino",
+      title: "Tornitura e molatura cerchi"
+    },
+    {
+      id: 5,
+      src: "/assets/servizi/saldatura.webp",
+      alt: "Saldatura cerchi in lega - Riparazione professionale Moncalieri",
+      title: "Saldatura cerchi in lega"
+    }
   ];
 
   return (
@@ -22,22 +40,20 @@ const GallerySection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {images.map((image) => (
             <div 
               key={image.id} 
               className="group relative overflow-hidden rounded-3xl bg-card shadow-card hover:shadow-xl transition-all duration-300 aspect-square"
             >
-              {/* Placeholder for images */}
-              <div className="w-full h-full bg-gradient-to-br from-accent/10 to-accent/20 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">🔧</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground px-4">[IMG_PLACEHOLDER]</p>
-                  <p className="text-xs text-muted-foreground px-4 mt-1">{image.alt}</p>
-                </div>
-              </div>
+              {/* Actual Image */}
+              <img
+                src={image.src}
+                alt={image.alt}
+                title={image.title}
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                loading="lazy"
+              />
               
               {/* Overlay */}
               <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">

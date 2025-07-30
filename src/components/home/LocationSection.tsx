@@ -1,8 +1,19 @@
 import { MapPin, Clock, Phone, Car, Train, Bus } from "lucide-react";
 import SectionTitle from "../ui/SectionTitle";
 import BodyText from "../ui/BodyText";
+import { openWhatsApp } from "../../lib/utils";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useNavigate } from "react-router-dom";
 
 const LocationSection = () => {
+  const navigate = useNavigate();
+
+  const handleContactClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    navigate('/contatti');
+    window.scrollTo(0, 0);
+  };
+
   return (
     <section className="py-16 lg:py-24 bg-muted/30">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -23,7 +34,14 @@ const LocationSection = () => {
                 </div>
                 <div>
                   <h3 className="font-heading font-bold text-lg text-accent mb-2">Indirizzo</h3>
-                  <p className="font-body text-foreground">Corso Roma 5 – Moncalieri (TO)</p>
+                  <a 
+                    href="https://maps.google.com/?q=Corso+Roma+5,+10024+Moncalieri+TO"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-body text-foreground hover:text-accent transition-colors"
+                  >
+                    <p>Corso Roma 5, 10024 Moncalieri (TO)</p>
+                  </a>
                 </div>
               </div>
             </div>
@@ -36,7 +54,7 @@ const LocationSection = () => {
                   <Car className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
                   <div>
                     <p className="font-body font-medium text-foreground">In auto</p>
-                    <p className="text-sm text-muted-foreground">Uscita Moncalieri dalla tangenziale, parcheggio disponibile in zona</p>
+                    <p className="text-sm text-muted-foreground">Dalla tangenziale, uscita Moncalieri, segui per il centro, siamo a due minuti da Piazza Bengasi. Parcheggio disponibile in zona.</p>
                   </div>
                 </div>
                 
@@ -44,7 +62,7 @@ const LocationSection = () => {
                   <Train className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
                   <div>
                     <p className="font-body font-medium text-foreground">In metropolitana</p>
-                    <p className="text-sm text-muted-foreground">Fermata Bengasi + 10 minuti a piedi o autobus</p>
+                    <p className="text-sm text-muted-foreground">Fermata Bengasi (capolinea, linea 1), poi dieci minuti a piedi o due fermate in bus.</p>
                   </div>
                 </div>
                 
@@ -52,7 +70,7 @@ const LocationSection = () => {
                   <Bus className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
                   <div>
                     <p className="font-body font-medium text-foreground">In autobus</p>
-                    <p className="text-sm text-muted-foreground">Linee 45 e 63 fermata Corso Roma</p>
+                    <p className="text-sm text-muted-foreground">Linea 45-63 - fermata Corso Roma / Vittime del Vajont.</p>
                   </div>
                 </div>
               </div>
@@ -79,7 +97,7 @@ const LocationSection = () => {
                   <div>
                     <h3 className="font-heading font-bold text-lg text-accent mb-2">Orari</h3>
                     <div className="text-sm space-y-1">
-                      <p className="text-foreground">Lunedì - Venerdì: 8:00 - 18:00</p>
+                      <p className="text-foreground">Lunedì - Venerdì: 8:30-12:30 / 14:00-18:30</p>
                       <p className="text-foreground">Sabato: su appuntamento</p>
                       <p className="text-muted-foreground">Domenica: Chiuso</p>
                     </div>
@@ -93,6 +111,9 @@ const LocationSection = () => {
               <BodyText className="text-center mb-4">
                 Passa a trovarci o richiedi Preventivi Online
               </BodyText>
+              <BodyText className="text-center mb-6 text-sm text-muted-foreground">
+                Inviare foto e misure dei cerchi su WhatsApp
+              </BodyText>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <a 
                   href="tel:+393476735353"
@@ -100,12 +121,16 @@ const LocationSection = () => {
                 >
                   Chiama Ora
                 </a>
-                <a 
-                  href="/contatti"
-                  className="inline-flex items-center justify-center px-6 py-3 border border-accent text-accent rounded-full font-body font-semibold hover:bg-accent/10 transition-colors"
+                <button 
+                  onClick={() => openWhatsApp()}
+                  className="inline-flex items-center justify-center px-6 py-3 bg-green-600 text-white rounded-full font-body font-semibold hover:bg-green-700 transition-colors group relative"
                 >
-                  Preventivo Online
-                </a>
+                  <FontAwesomeIcon icon={['fab', 'whatsapp']} className="w-4 h-4 mr-2" />
+                  WhatsApp
+                  <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-800 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                    Invia foto e misure
+                  </span>
+                </button>
               </div>
             </div>
           </div>
@@ -114,11 +139,34 @@ const LocationSection = () => {
           <div className="lg:sticky lg:top-24 lg:self-start">
             <div className="bg-card p-6 rounded-3xl shadow-card">
               <h3 className="font-heading font-bold text-lg text-accent mb-4">Posizione</h3>
-              <div className="aspect-video bg-muted rounded-2xl flex items-center justify-center">
+              <div className="space-y-4">
+                <div className="aspect-video bg-muted rounded-2xl overflow-hidden">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2325.150415334889!2d7.671687075373457!3d45.003899464034255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4788127df7607d6b%3A0xfbcd3dca3b91b991!2sCorso%20Roma%2C%205%2C%2010024%20Moncalieri%20TO!5e1!3m2!1sen!2sit!4v1753880837609!5m2!1sen!2sit"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Wheel Wizard Moncalieri - Corso Roma 5"
+                    className="w-full h-full"
+                  ></iframe>
+                </div>
                 <div className="text-center">
-                  <MapPin className="w-12 h-12 text-accent mx-auto mb-4" />
-                  <p className="text-muted-foreground">[MAP_PLACEHOLDER]</p>
-                  <p className="text-sm text-muted-foreground mt-2">Mappa Interattiva</p>
+                  <a 
+                    href="https://maps.google.com/?q=Corso+Roma+5,+10024+Moncalieri+TO"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-body font-medium text-foreground hover:text-accent transition-colors"
+                  >
+                    <p className="mb-1">
+                      Corso Roma, 5, 10024 Moncalieri TO
+                    </p>
+                  </a>
+                  <p className="text-sm text-muted-foreground">
+                    La nostra officina si trova qui
+                  </p>
                 </div>
               </div>
             </div>

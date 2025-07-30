@@ -22,9 +22,11 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
-              <span className="text-accent-foreground font-heading font-bold text-lg">OS</span>
-            </div>
+            <img 
+              src="/assets/Logo.webp" 
+              alt="Officina Schettino Logo" 
+              className="w-10 h-10 object-contain"
+            />
             <div>
               <div className="font-heading font-bold text-lg text-accent">Officina Schettino</div>
               <div className="text-xs text-muted-foreground">Riparazione Cerchi in Lega</div>

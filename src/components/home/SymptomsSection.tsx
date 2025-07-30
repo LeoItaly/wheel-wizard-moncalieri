@@ -1,13 +1,18 @@
-import { CheckCircle, AlertTriangle } from "lucide-react";
-import SectionTitle from "../ui/SectionTitle";
+import { CheckCircle } from "lucide-react";
 import BodyText from "../ui/BodyText";
+import { openWhatsApp } from "../../lib/utils";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const SymptomsSection = () => {
   const symptoms = [
     "Il volante vibra",
-    "Senti rumori strani", 
-    "Perdi pressione",
-    "La macchina sbandella o le gomme si consumano male"
+    "Senti rumori strani",
+    "Il cerchio ha ammaccature",
+    "La gomma perde aria",
+    "Il cerchio è deformato",
+    "Senti vibrazioni a velocità alta",
+    "Il cerchio ha graffi profondi",
+    "La gomma si consuma in modo irregolare"
   ];
 
   return (
@@ -15,32 +20,33 @@ const SymptomsSection = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <SectionTitle className="mb-6">
-              Hai preso una buca, colpito un marciapiede, sentito un botto?
-            </SectionTitle>
-            <BodyText className="max-w-3xl mx-auto">
-              I cerchi in lega sono componenti delicati che possono subire danni anche con piccoli urti. 
-              Riconoscere i segnali è importante per la tua sicurezza e per evitare danni maggiori.
+            <h2 className="font-heading font-bold text-3xl lg:text-4xl text-accent mb-6">
+              Sintomi comuni di cerchi danneggiati
+            </h2>
+            <BodyText size="lg" className="max-w-2xl mx-auto">
+              Se noti uno di questi sintomi, potrebbe essere il momento di far controllare i tuoi cerchi
             </BodyText>
           </div>
 
           {/* Symptoms Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-            {symptoms.map((symptom, index) => (
-              <div 
-                key={index}
-                className="bg-card p-6 rounded-3xl shadow-card border border-border hover:border-accent/30 transition-colors duration-300"
-              >
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0">
-                    <AlertTriangle className="w-6 h-6 text-red-400" />
-                  </div>
-                  <div>
-                    <p className="font-body font-medium text-foreground">{symptom}</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {symptoms.map((symptom, index) => {
+              // Check if this symptom should be centered
+              const shouldCenter = [
+                "Il cerchio è deformato",
+                "Senti vibrazioni a velocità alta", 
+                "Il cerchio ha graffi profondi"
+              ].includes(symptom);
+              
+              return (
+                <div key={index} className="bg-card p-6 rounded-3xl shadow-card border border-accent/10">
+                  <div className={`flex ${shouldCenter ? 'items-center justify-center text-center' : 'items-start'} space-x-3`}>
+                    <CheckCircle className={`w-6 h-6 text-accent ${shouldCenter ? '' : 'mt-1'} flex-shrink-0`} />
+                    <p className="font-body text-foreground">{symptom}</p>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           {/* Call to Action */}
@@ -54,7 +60,7 @@ const SymptomsSection = () => {
                   Non ignorare questi segnali
                 </h3>
                 <BodyText className="mb-4">
-                  Non ignorare questi segnali: è il tuo cerchio che ti sta chiedendo aiuto. Rivolgiti al Fabbro Schettino…
+                  è il tuo cerchio che ti sta chiedendo aiuto. Rivolgiti al Fabbro Schettino, l'unico che ha transformato l'esperienza in una nuova tecnologia per la riparazione dei cerchi in lega.
                 </BodyText>
                 <div className="flex flex-wrap gap-4">
                   <a 
@@ -63,12 +69,16 @@ const SymptomsSection = () => {
                   >
                     Chiama Ora: 347 67 35 353
                   </a>
-                  <a 
-                    href="/contatti"
-                    className="inline-flex items-center px-6 py-3 border border-accent text-accent rounded-full font-body font-semibold hover:bg-accent/10 transition-colors"
+                  <button 
+                    onClick={() => openWhatsApp("Ciao! Ho notato alcuni sintomi nei miei cerchi e vorrei un consulto.")}
+                    className="inline-flex items-center px-6 py-3 bg-green-600 text-white rounded-full font-body font-semibold hover:bg-green-700 transition-colors group relative"
                   >
-                    Preventivo Online
-                  </a>
+                    <FontAwesomeIcon icon={['fab', 'whatsapp']} className="w-4 h-4 mr-2" />
+                    WhatsApp
+                    <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-800 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                      Invia foto e misure
+                    </span>
+                  </button>
                 </div>
               </div>
             </div>

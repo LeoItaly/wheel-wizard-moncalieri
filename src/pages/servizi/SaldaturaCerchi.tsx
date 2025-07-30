@@ -1,8 +1,13 @@
 import Layout from "../../components/layout/Layout";
+import SEOHead from "../../components/layout/SEOHead";
+import Breadcrumb from "../../components/ui/breadcrumb";
 import SectionTitle from "../../components/ui/SectionTitle";
 import BodyText from "../../components/ui/BodyText";
 import CTAButton from "../../components/ui/CTAButton";
+import RichiediPreventivo from "../../components/ui/RichiediPreventivo";
 import { Wrench, CheckCircle, AlertTriangle } from "lucide-react";
+import { openWhatsApp } from "../../lib/utils";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const SaldaturaCerchi = () => {
   const benefits = [
@@ -19,20 +24,67 @@ const SaldaturaCerchi = () => {
     "Micro-fratture da stress"
   ];
 
+  const breadcrumbItems = [
+    { name: "Servizi", url: "/servizi" },
+    { name: "Saldatura Cerchi in Lega", url: "/servizi/saldatura-cerchi-in-lega" }
+  ];
+
   return (
     <Layout>
+      <SEOHead 
+        title="Saldatura Cerchi in Lega Moncalieri | Officina Schettino"
+        description="Saldatura cerchi in lega a Moncalieri e Torino. Riparazione professionale di crepe e rotture. Chiama ora per preventivo gratuito."
+        canonical="/servizi/saldatura-cerchi-in-lega"
+        breadcrumbs={breadcrumbItems}
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Saldatura Cerchi in Lega",
+          "description": "Riparazione professionale di crepe e rotture nei cerchi in lega con tecniche avanzate di saldatura",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Officina Schettino"
+          },
+          "areaServed": ["Moncalieri", "Torino"],
+          "serviceType": "Riparazione Auto",
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Saldatura Cerchi in Lega",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Saldatura Crepe Cerchi",
+                  "description": "Riparazione di crepe da impatto con buche"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Saldatura Fessure Cerchi",
+                  "description": "Riparazione di fessure longitudinali"
+                }
+              }
+            ]
+          }
+        }}
+      />
+      
       {/* Hero Section */}
       <section className="py-16 lg:py-24 bg-gradient-to-br from-background via-background to-card">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <Breadcrumb items={breadcrumbItems} />
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <div className="flex justify-center mb-6">
               <div className="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center">
                 <Wrench className="w-10 h-10 text-accent" />
               </div>
             </div>
-            <SectionTitle>
-              Saldatura Cerchi in Lega
-            </SectionTitle>
+            <h1 className="font-heading font-bold text-4xl lg:text-5xl text-foreground leading-tight">
+              Saldatura Cerchi in Lega <span className="text-accent">Moncalieri</span>
+            </h1>
             <BodyText size="lg" className="max-w-3xl mx-auto">
               Ripariamo crepe e fessure con tecniche di saldatura specializzate, restituendo struttura e sicurezza al tuo cerchio.
             </BodyText>
@@ -47,7 +99,7 @@ const SaldaturaCerchi = () => {
             {/* Process Description */}
             <div className="space-y-8">
               <div>
-                <h3 className="font-heading font-bold text-2xl text-accent mb-4">Il Nostro Processo</h3>
+                <h2 className="font-heading font-bold text-2xl text-accent mb-4">Il Nostro Processo</h2>
                 <BodyText className="mb-6">
                   La saldatura cerchi in lega è una procedura delicata che richiede competenze specifiche e attrezzature professionali. 
                   Il nostro team utilizza tecniche avanzate per garantire riparazioni durevoli e sicure.
@@ -55,7 +107,7 @@ const SaldaturaCerchi = () => {
               </div>
 
               <div className="bg-card p-6 rounded-3xl shadow-card">
-                <h4 className="font-heading font-bold text-lg text-accent mb-4">Tipi di Danni Riparabili</h4>
+                <h3 className="font-heading font-bold text-lg text-accent mb-4">Tipi di Danni Riparabili</h3>
                 <div className="space-y-3">
                   {damages.map((damage, index) => (
                     <div key={index} className="flex items-start space-x-3">
@@ -67,7 +119,7 @@ const SaldaturaCerchi = () => {
               </div>
 
               <div className="bg-card p-6 rounded-3xl shadow-card">
-                <h4 className="font-heading font-bold text-lg text-accent mb-4">Vantaggi del Servizio</h4>
+                <h3 className="font-heading font-bold text-lg text-accent mb-4">Vantaggi del Servizio</h3>
                 <div className="space-y-3">
                   {benefits.map((benefit, index) => (
                     <div key={index} className="flex items-start space-x-3">
@@ -82,42 +134,16 @@ const SaldaturaCerchi = () => {
             {/* Visual Section */}
             <div className="space-y-8">
               <div className="bg-card p-6 rounded-3xl shadow-card">
-                <h4 className="font-heading font-bold text-lg text-accent mb-4">Prima e Dopo</h4>
-                <div className="space-y-4">
-                  <div className="aspect-video bg-gradient-to-br from-red-500/20 to-red-600/20 rounded-2xl flex items-center justify-center">
-                    <div className="text-center">
-                      <AlertTriangle className="w-12 h-12 text-red-400 mx-auto mb-2" />
-                      <p className="text-muted-foreground">[IMG_PLACEHOLDER]</p>
-                      <p className="text-sm text-muted-foreground">Cerchio danneggiato</p>
-                    </div>
-                  </div>
-                  
-                  <div className="aspect-video bg-gradient-to-br from-green-500/20 to-green-600/20 rounded-2xl flex items-center justify-center">
-                    <div className="text-center">
-                      <CheckCircle className="w-12 h-12 text-green-400 mx-auto mb-2" />
-                      <p className="text-muted-foreground">[IMG_PLACEHOLDER]</p>
-                      <p className="text-sm text-muted-foreground">Cerchio riparato</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-accent/10 p-6 rounded-3xl border border-accent/20">
-                <h4 className="font-heading font-bold text-lg text-accent mb-4">Garanzia e Sicurezza</h4>
-                <BodyText className="mb-4">
-                  Tutti i nostri lavori di saldatura sono garantiti e rispettano gli standard di sicurezza più rigorosi. 
-                  Eseguiamo test di resistenza per assicurare la durata nel tempo.
-                </BodyText>
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <a 
-                    href="tel:+393476735353"
-                    className="inline-flex items-center justify-center px-6 py-3 bg-accent text-accent-foreground rounded-full font-body font-semibold hover:bg-accent/90 transition-colors"
-                  >
-                    Preventivo Gratuito
-                  </a>
-                  <CTAButton to="/contatti" variant="secondary">
-                    Maggiori Info
-                  </CTAButton>
+                <h3 className="font-heading font-bold text-lg text-accent mb-4">Saldatura Cerchi in Lega</h3>
+                <div className="aspect-video rounded-2xl overflow-hidden">
+                  <img 
+                    src="/assets/servizi/saldatura.webp" 
+                    alt="Saldatura cerchi in lega - Officina Schettino Moncalieri" 
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    width={600}
+                    height={400}
+                  />
                 </div>
               </div>
             </div>
@@ -144,6 +170,9 @@ const SaldaturaCerchi = () => {
           </div>
         </div>
       </section>
+
+      {/* Richiedi Preventivo Section */}
+      <RichiediPreventivo serviceName="saldatura cerchi in lega" />
     </Layout>
   );
 };

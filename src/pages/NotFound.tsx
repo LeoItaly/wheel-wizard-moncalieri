@@ -1,5 +1,8 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import Layout from "../components/layout/Layout";
+import SEOHead from "../components/layout/SEOHead";
+import CTAButton from "../components/ui/CTAButton";
 
 const NotFound = () => {
   const location = useLocation();
@@ -12,15 +15,28 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">404</h1>
-        <p className="text-xl text-gray-600 mb-4">Oops! Page not found</p>
-        <a href="/" className="text-blue-500 hover:text-blue-700 underline">
-          Return to Home
-        </a>
+    <Layout>
+      <SEOHead 
+        title="Pagina Non Trovata | Officina Schettino"
+        description="Pagina non trovata. Torna alla home di Officina Schettino per riparazioni cerchi in lega a Moncalieri."
+        canonical="/404"
+      />
+      
+      <div className="min-h-screen flex items-center justify-center bg-background">
+        <div className="text-center max-w-md mx-auto px-6">
+          <h1 className="text-6xl font-bold text-accent mb-4">404</h1>
+          <h2 className="text-2xl font-semibold text-foreground mb-4">
+            Pagina Non Trovata
+          </h2>
+          <p className="text-muted-foreground mb-8">
+            La pagina che stai cercando non esiste. Torna alla home per scoprire i nostri servizi di riparazione cerchi in lega.
+          </p>
+          <CTAButton to="/">
+            Torna alla Home
+          </CTAButton>
+        </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 

@@ -10,9 +10,11 @@ const Footer = () => {
           {/* Logo and Company Info */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
-                <span className="text-accent-foreground font-heading font-bold text-lg">OS</span>
-              </div>
+              <img 
+                src="/assets/Logo.webp" 
+                alt="Officina Schettino Logo" 
+                className="w-10 h-10 object-contain"
+              />
               <div>
                 <div className="font-heading font-bold text-lg text-accent">Officina Schettino</div>
                 <div className="text-xs text-muted-foreground">Riparazione Cerchi in Lega</div>
@@ -59,11 +61,22 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="font-heading font-semibold text-foreground">Contatti</h3>
             <div className="space-y-2 text-sm text-muted-foreground">
-              <p>Corso Roma 5</p>
-              <p>10024 Moncalieri (TO)</p>
-              <p className="text-accent font-medium">347 67 35 353</p>
+              <a 
+                href="https://maps.google.com/?q=Corso+Roma+5,+10024+Moncalieri+TO"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-accent transition-colors"
+              >
+                <p>Corso Roma 5, 10024 Moncalieri (TO)</p>
+              </a>
+              <a 
+                href="tel:+393476735353"
+                className="text-accent font-medium hover:text-accent/80 transition-colors"
+              >
+                347 67 35 353
+              </a>
               <div className="text-xs">
-                <p>Lun-Ven: 8:00 - 18:00</p>
+                <p>Lun-Ven: 8:30-12:30 / 14:00-18:30</p>
                 <p>Sabato: su appuntamento</p>
               </div>
             </div>

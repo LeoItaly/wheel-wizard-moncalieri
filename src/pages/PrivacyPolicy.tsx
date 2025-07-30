@@ -1,17 +1,31 @@
 import Layout from "../components/layout/Layout";
+import SEOHead from "../components/layout/SEOHead";
+import Breadcrumb from "../components/ui/breadcrumb";
 import SectionTitle from "../components/ui/SectionTitle";
 import BodyText from "../components/ui/BodyText";
 
 const PrivacyPolicy = () => {
+  const breadcrumbItems = [
+    { name: "Privacy Policy", url: "/privacy-policy" }
+  ];
+
   return (
     <Layout>
+      <SEOHead 
+        title="Privacy Policy | Officina Schettino"
+        description="Privacy Policy di Officina Schettino. Informazioni sul trattamento dei dati personali per riparazioni cerchi in lega a Moncalieri."
+        canonical="/privacy-policy"
+        breadcrumbs={breadcrumbItems}
+      />
+      
       <section className="py-16 lg:py-24 bg-background">
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
+          <Breadcrumb items={breadcrumbItems} />
           <div className="space-y-8">
             <div className="text-center">
-              <SectionTitle className="mb-6">
+              <h1 className="font-heading font-bold text-4xl lg:text-5xl text-foreground leading-tight mb-6">
                 Privacy Policy
-              </SectionTitle>
+              </h1>
               <BodyText>
                 Ultima modifica: {new Date().toLocaleDateString('it-IT')}
               </BodyText>
@@ -19,16 +33,16 @@ const PrivacyPolicy = () => {
 
             <div className="bg-card p-8 rounded-3xl shadow-card space-y-6">
               <div>
-                <h3 className="font-heading font-bold text-xl text-accent mb-4">1. Informazioni Generali</h3>
+                <h2 className="font-heading font-bold text-xl text-accent mb-4">1. Informazioni Generali</h2>
                 <BodyText>
-                  Officina Schettino, con sede in Corso Roma 5, 10024 Moncalieri (TO), 
+                  Officina Schettino, con sede in <a href="https://maps.google.com/?q=Corso+Roma+5,+10024+Moncalieri+TO" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Corso Roma 5, 10024 Moncalieri (TO)</a>, 
                   rispetta la privacy dei propri clienti e si impegna a proteggere i dati personali 
                   in conformità al Regolamento Generale sulla Protezione dei Dati (GDPR).
                 </BodyText>
               </div>
 
               <div>
-                <h3 className="font-heading font-bold text-xl text-accent mb-4">2. Dati Raccolti</h3>
+                <h2 className="font-heading font-bold text-xl text-accent mb-4">2. Dati Raccolti</h2>
                 <BodyText>
                   Raccogliamo i seguenti tipi di dati personali:
                 </BodyText>
@@ -40,7 +54,7 @@ const PrivacyPolicy = () => {
               </div>
 
               <div>
-                <h3 className="font-heading font-bold text-xl text-accent mb-4">3. Finalità del Trattamento</h3>
+                <h2 className="font-heading font-bold text-xl text-accent mb-4">3. Finalità del Trattamento</h2>
                 <BodyText>
                   I dati vengono utilizzati per:
                 </BodyText>
@@ -53,7 +67,7 @@ const PrivacyPolicy = () => {
               </div>
 
               <div>
-                <h3 className="font-heading font-bold text-xl text-accent mb-4">4. Base Giuridica</h3>
+                <h2 className="font-heading font-bold text-xl text-accent mb-4">4. Base Giuridica</h2>
                 <BodyText>
                   Il trattamento dei dati si basa su:
                 </BodyText>
@@ -66,7 +80,7 @@ const PrivacyPolicy = () => {
               </div>
 
               <div>
-                <h3 className="font-heading font-bold text-xl text-accent mb-4">5. Diritti dell'Interessato</h3>
+                <h2 className="font-heading font-bold text-xl text-accent mb-4">5. Diritti dell'Interessato</h2>
                 <BodyText>
                   Hai il diritto di:
                 </BodyText>
@@ -81,14 +95,14 @@ const PrivacyPolicy = () => {
               </div>
 
               <div>
-                <h3 className="font-heading font-bold text-xl text-accent mb-4">6. Contatti</h3>
+                <h2 className="font-heading font-bold text-xl text-accent mb-4">6. Contatti</h2>
                 <BodyText>
                   Per esercitare i tuoi diritti o per domande sulla privacy, contattaci:
                 </BodyText>
                 <div className="mt-3 space-y-1 text-foreground">
-                  <p>Email: privacy@officinaschettino.it</p>
+                  <p>Email: schettino.f97@gmail.com</p>
                   <p>Telefono: 347 67 35 353</p>
-                  <p>Indirizzo: Corso Roma 5, 10024 Moncalieri (TO)</p>
+                  <p>Indirizzo: <a href="https://maps.google.com/?q=Corso+Roma+5,+10024+Moncalieri+TO" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Corso Roma 5, 10024 Moncalieri (TO)</a></p>
                 </div>
               </div>
             </div>

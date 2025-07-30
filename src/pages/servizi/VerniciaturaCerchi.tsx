@@ -1,25 +1,75 @@
 import Layout from "../../components/layout/Layout";
+import SEOHead from "../../components/layout/SEOHead";
+import Breadcrumb from "../../components/ui/breadcrumb";
 import SectionTitle from "../../components/ui/SectionTitle";
 import BodyText from "../../components/ui/BodyText";
 import CTAButton from "../../components/ui/CTAButton";
+import RichiediPreventivo from "../../components/ui/RichiediPreventivo";
 import { Palette, CheckCircle, AlertTriangle } from "lucide-react";
 
 const VerniciaturaCerchi = () => {
+  const breadcrumbItems = [
+    { name: "Servizi", url: "/servizi" },
+    { name: "Verniciatura Cerchi in Lega", url: "/servizi/verniciatura-cerchi-in-lega" }
+  ];
+
   return (
     <Layout>
+      <SEOHead 
+        title="Verniciatura Cerchi in Lega Moncalieri | Officina Schettino"
+        description="Verniciatura cerchi in lega a Moncalieri e Torino. Verniciature professionali a polvere per ripristinare l'aspetto originale. Chiama ora."
+        canonical="/servizi/verniciatura-cerchi-in-lega"
+        breadcrumbs={breadcrumbItems}
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Verniciatura Cerchi in Lega",
+          "description": "Rifinitura e protezione dei cerchi con verniciature di alta qualità e finiture personalizzate",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Officina Schettino"
+          },
+          "areaServed": ["Moncalieri", "Torino"],
+          "serviceType": "Riparazione Auto",
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Verniciatura Cerchi in Lega",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Verniciatura a Polvere",
+                  "description": "Verniciatura professionale con polveri epossidiche"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Trattamento Anti-corrosione",
+                  "description": "Protezione contro corrosione e ossidazione"
+                }
+              }
+            ]
+          }
+        }}
+      />
+      
       <section className="py-16 lg:py-24 bg-gradient-to-br from-background via-background to-card">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <Breadcrumb items={breadcrumbItems} />
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <div className="flex justify-center mb-6">
               <div className="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center">
                 <Palette className="w-10 h-10 text-accent" />
               </div>
             </div>
-            <SectionTitle>
-              Verniciatura Cerchi in Lega
-            </SectionTitle>
+            <h1 className="font-heading font-bold text-4xl lg:text-5xl text-foreground leading-tight">
+              Verniciatura Cerchi in Lega <span className="text-accent">Moncalieri</span>
+            </h1>
             <BodyText size="lg" className="max-w-3xl mx-auto">
-              Trattiamo, verniciamo e lucidiamo la superficie per un risultato estetico perfetto e duraturo.
+              Rinnoviamo l'aspetto dei cerchi con verniciature professionali a polvere per ripristinare la bellezza originale.
             </BodyText>
           </div>
         </div>
@@ -30,7 +80,7 @@ const VerniciaturaCerchi = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="space-y-8">
               <div>
-                <h3 className="font-heading font-bold text-2xl text-accent mb-4">Verniciatura Professionale</h3>
+                <h2 className="font-heading font-bold text-2xl text-accent mb-4">Verniciatura Professionale</h2>
                 <BodyText className="mb-6">
                   La verniciatura cerchi richiede tecniche specializzate e prodotti di alta qualità per garantire 
                   un risultato duraturo e resistente alle intemperie e all'usura quotidiana.
@@ -38,7 +88,7 @@ const VerniciaturaCerchi = () => {
               </div>
 
               <div className="bg-card p-6 rounded-3xl shadow-card">
-                <h4 className="font-heading font-bold text-lg text-accent mb-4">Problemi Risolti</h4>
+                <h3 className="font-heading font-bold text-lg text-accent mb-4">Problemi Risolti</h3>
                 <div className="space-y-3">
                   {[
                     "Vernice scrostata o sbiadita",
@@ -57,13 +107,16 @@ const VerniciaturaCerchi = () => {
 
             <div className="space-y-8">
               <div className="bg-card p-6 rounded-3xl shadow-card">
-                <h4 className="font-heading font-bold text-lg text-accent mb-4">Processo di Verniciatura</h4>
-                <div className="aspect-video bg-gradient-to-br from-purple-500/20 to-purple-600/20 rounded-2xl flex items-center justify-center mb-4">
-                  <div className="text-center">
-                    <Palette className="w-12 h-12 text-purple-400 mx-auto mb-2" />
-                    <p className="text-muted-foreground">[IMG_PLACEHOLDER]</p>
-                    <p className="text-sm text-muted-foreground">Verniciatura a cabina</p>
-                  </div>
+                <h3 className="font-heading font-bold text-lg text-accent mb-4">Verniciatura Cerchi in Lega</h3>
+                <div className="aspect-[3/2] rounded-2xl overflow-hidden mb-4">
+                  <img 
+                    src="/assets/servizi/verniciatura.webp" 
+                    alt="Verniciatura cerchi in lega - Officina Schettino Moncalieri" 
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    width={600}
+                    height={400}
+                  />
                 </div>
                 <div className="space-y-3">
                   {[
@@ -86,9 +139,9 @@ const VerniciaturaCerchi = () => {
 
       <section className="py-16 lg:py-24 bg-muted/30">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <SectionTitle level="h3" className="mb-8">
+          <h2 className="font-heading font-bold text-3xl text-foreground mb-8">
             Altri Servizi Disponibili
-          </SectionTitle>
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <CTAButton to="/servizi/saldatura-cerchi-in-lega" variant="secondary">
               Saldatura
@@ -102,6 +155,8 @@ const VerniciaturaCerchi = () => {
           </div>
         </div>
       </section>
+
+      <RichiediPreventivo />
     </Layout>
   );
 };
