@@ -113,6 +113,9 @@ const SEOHead = ({
       <meta property="og:type" content="website" />
       <meta property="og:url" content={fullCanonical} />
       <meta property="og:image" content={fullOgImage} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content="Officina Schettino - Riparazioni Cerchi in Lega Moncalieri" />
       <meta property="og:site_name" content="Officina Schettino" />
       <meta property="og:locale" content="it_IT" />
       
@@ -121,6 +124,7 @@ const SEOHead = ({
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={fullOgImage} />
+      <meta name="twitter:image:alt" content="Officina Schettino - Riparazioni Cerchi in Lega Moncalieri" />
       
       {/* Additional Meta Tags */}
       <meta name="robots" content="index, follow" />
