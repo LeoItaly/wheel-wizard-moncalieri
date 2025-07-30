@@ -8,51 +8,48 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Officina Schettino Brand Colors */
+    --background: 210 58% 11%; /* #0D1B2A */
+    --foreground: 210 14% 69%; /* #B0B9C2 */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 210 50% 15%; /* Slightly lighter than background for cards */
+    --card-foreground: 210 14% 69%; /* #B0B9C2 */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 210 50% 15%;
+    --popover-foreground: 210 14% 69%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 88 62% 68%; /* #A3D977 - Green accent */
+    --primary-foreground: 210 58% 11%; /* Dark text on green */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 210 40% 25%; /* Medium dark for secondary elements */
+    --secondary-foreground: 210 14% 69%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 30% 20%; /* Muted background */
+    --muted-foreground: 210 14% 55%; /* Slightly dimmed text */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 88 62% 68%; /* #A3D977 - Green accent */
+    --accent-foreground: 210 58% 11%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 210 30% 25%; /* Subtle borders */
+    --input: 210 30% 20%; /* Input backgrounds */
+    --ring: 88 62% 68%; /* Focus ring - green */
 
-    --radius: 0.5rem;
+    --radius: 1.5rem; /* 24px border radius as specified */
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Additional brand variables */
+    --brand-dark: 210 58% 11%; /* #0D1B2A */
+    --brand-text: 210 14% 69%; /* #B0B9C2 */
+    --brand-accent: 88 62% 68%; /* #A3D977 */
+    
+    /* Shadows */
+    --shadow-soft: 0 10px 30px -10px rgba(13, 27, 42, 0.3);
+    --shadow-card: 0 8px 25px -8px rgba(13, 27, 42, 0.4);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .dark {
@@ -100,6 +97,21 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+    font-weight: 600;
+    color: hsl(var(--brand-accent));
+  }
+
+  .font-heading {
+    font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+  }
+
+  .font-body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
 }
