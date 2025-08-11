@@ -12,7 +12,7 @@ const Footer = () => {
             <Link to="/" className="flex items-center space-x-3">
               <img 
                 src="/assets/Logo.webp" 
-                alt="Officina Schettino Logo" 
+                alt="Officina Schettino Logo - Cerchi in lega Moncalieri Torino Nichelino" 
                 className="w-10 h-10 object-contain"
               />
               <div>

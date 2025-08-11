@@ -5,25 +5,25 @@ const GallerySection = () => {
     {
       id: 1,
       src: "/assets/homepage/cerchione.webp",
-      alt: "Cerchio in lega danneggiato prima della riparazione - Officina Schettino Moncalieri",
+      alt: "Cerchio in lega danneggiato prima della riparazione - Officina Schettino Moncalieri Torino Nichelino",
       title: "Cerchio danneggiato prima della riparazione"
     },
     {
       id: 2,
       src: "/assets/homepage/cerchione-2.webp",
-      alt: "Processo di riparazione cerchi in lega - Saldatura professionale a Moncalieri",
+      alt: "Processo di riparazione cerchi in lega - Saldatura professionale a Moncalieri Torino Nichelino",
       title: "Processo di saldatura cerchi"
     },
     {
       id: 3,
       src: "/assets/homepage/fabbro.webp",
-      alt: "Tornitura e molatura cerchi in lega - Lavorazione di precisione Torino",
+      alt: "Tornitura e molatura cerchi in lega - Lavorazione di precisione Moncalieri Torino Nichelino",
       title: "Tornitura e molatura cerchi"
     },
     {
       id: 5,
       src: "/assets/servizi/saldatura.webp",
-      alt: "Saldatura cerchi in lega - Riparazione professionale Moncalieri",
+      alt: "Saldatura cerchi in lega - Riparazione professionale Moncalieri Torino Nichelino",
       title: "Saldatura cerchi in lega"
     }
   ];
