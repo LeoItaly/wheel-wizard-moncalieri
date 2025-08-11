@@ -108,12 +108,13 @@ const TornituraRisaMolatura = () => {
             <div className="space-y-8">
               <div className="bg-card p-6 rounded-3xl shadow-card">
                 <h3 className="font-heading font-bold text-lg text-accent mb-4">Processo</h3>
-                <div className="aspect-video bg-gradient-to-br from-green-500/20 to-green-600/20 rounded-2xl flex items-center justify-center mb-4">
-                  <div className="text-center">
-                    <RotateCcw className="w-12 h-12 text-green-400 mx-auto mb-2" />
-                    <p className="text-muted-foreground">Tornitura di precisione</p>
-                    <p className="text-sm text-muted-foreground">Macchinari professionali</p>
-                  </div>
+                <div className="aspect-[3/4] max-w-xs mx-auto bg-gradient-to-br from-green-500/20 to-green-600/20 rounded-2xl flex items-center justify-center mb-4 overflow-hidden">
+                  <img 
+                    src="/assets/servizi/tornitura.webp" 
+                    alt="Tornitura cerchi in lega Moncalieri" 
+                    className="object-cover w-full h-full" 
+                    loading="lazy"
+                  />
                 </div>
                 <div className="space-y-3">
                   {[
