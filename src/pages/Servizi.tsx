@@ -21,7 +21,7 @@ const Servizi = () => {
       id: 2,
       title: "Tornitura e Molatura",
       description: "Ripristino della forma originale dei cerchi danneggiati attraverso tornitura e molatura di precisione.",
-      image: null, // Placeholder - no image yet
+      image: "/assets/servizi/tornitura.webp", // Placeholder - no image yet
       link: "/servizi/tornitura-molatura-cerchi"
     },
     {
