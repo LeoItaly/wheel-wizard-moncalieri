@@ -20,7 +20,7 @@ const SEOHead = ({
   structuredData,
   breadcrumbs 
 }: SEOHeadProps) => {
-  const baseUrl = "https://officinaschettino.it";
+  const baseUrl = "https://cerchiinlegatorino.com";
   const fullCanonical = canonical ? `${baseUrl}${canonical}` : baseUrl;
   const fullOgImage = ogImage.startsWith('http') ? ogImage : `${baseUrl}${ogImage}`;
 

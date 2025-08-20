@@ -144,7 +144,7 @@ Ottimizzazione completa del sito web per le SERP locali e AI Overviews sulle key
 ```
 User-agent: *
 Allow: /
-Sitemap: https://officinaschettino.it/sitemap.xml
+Sitemap: https://cerchiinlegatorino.com/sitemap.xml
 Crawl-delay: 1
 ```
 

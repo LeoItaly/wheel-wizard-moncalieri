@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://officinaschettino.it/sitemap.xml
+Sitemap: https://cerchiinlegatorino.com/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 1
