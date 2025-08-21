@@ -19,7 +19,6 @@ const NotFound = () => {
       <SEOHead 
         title="Pagina Non Trovata | Officina Schettino"
         description="Pagina non trovata. Torna alla home di Officina Schettino per riparazioni cerchi in lega a Moncalieri."
-        canonical="/404"
       />
       
       <div className="min-h-screen flex items-center justify-center bg-background">
