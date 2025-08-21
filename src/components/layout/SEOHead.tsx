@@ -129,6 +129,31 @@ const SEOHead = ({
       {/* Additional Meta Tags */}
       <meta name="robots" content="index, follow" />
       <meta name="author" content="Officina Schettino" />
+      
+      {/* Local SEO Meta Tags */}
+      <meta name="geo.region" content="IT-TO" />
+      <meta name="geo.placename" content="Moncalieri" />
+      <meta name="geo.position" content="44.9998;7.6833" />
+      <meta name="ICBM" content="44.9998, 7.6833" />
+      
+      {/* Google-specific Meta Tags */}
+      <meta name="google-site-verification" content="google2cd420a52d7d0dbe" />
+      <meta name="DC.title" content="Riparazione Cerchi in Lega Moncalieri - Officina Schettino" />
+      <meta name="DC.description" content="Specialisti riparazione cerchi in lega a Moncalieri e Torino. Saldatura, tornitura, verniciatura e diamantatura cerchi professionali." />
+      <meta name="DC.subject" content="Riparazione Cerchi in Lega, Moncalieri, Torino" />
+      <meta name="DC.creator" content="Officina Schettino" />
+      <meta name="DC.publisher" content="Officina Schettino" />
+      <meta name="DC.coverage" content="Moncalieri, Torino, Piemonte, Italia" />
+      <meta name="DC.language" content="it" />
+      
+      {/* Business-specific Meta Tags */}
+      <meta name="business:contact_data:street_address" content="Via Torino 2" />
+      <meta name="business:contact_data:locality" content="Moncalieri" />
+      <meta name="business:contact_data:postal_code" content="10024" />
+      <meta name="business:contact_data:country_name" content="Italia" />
+      <meta name="business:contact_data:phone_number" content="+393406914883" />
+      <meta name="business:contact_data:email" content="schettino.f97@gmail.com" />
+      
       <meta name="keywords" content="cerchi in lega, riparazione cerchi in lega, Moncalieri, Torino, Nichelino, saldatura cerchi, tornitura cerchi, verniciatura cerchi, diamantatura cerchi, officina cerchi in lega, riparazione cerchi Moncalieri, riparazione cerchi Torino, riparazione cerchi Nichelino, fabbro Moncalieri, fabbro Torino, fabbro Nichelino, cerchi in lega Moncalieri, cerchi in lega Torino, cerchi in lega Nichelino, riparazione ruote, officina ruote, riparazione cerchi auto, riparazione cerchi danneggiati, riparazione cerchi graffiati, riparazione cerchi piegati, riparazione cerchi crepati, riparazione cerchi rotti, riparazione cerchi auto Moncalieri, riparazione cerchi auto Torino, riparazione cerchi auto Nichelino, riparazione cerchi in lega Piemonte, cerchi in lega Piemonte, saldatura cerchi Moncalieri, saldatura cerchi Torino, saldatura cerchi Nichelino, tornitura cerchi Moncalieri, tornitura cerchi Torino, tornitura cerchi Nichelino, verniciatura cerchi Moncalieri, verniciatura cerchi Torino, verniciatura cerchi Nichelino, diamantatura cerchi Moncalieri, diamantatura cerchi Torino, diamantatura cerchi Nichelino, riparazione cerchi vicino a me, cerchi in lega vicino a me, riparazione cerchi professionale, riparazione cerchi rapida, riparazione cerchi economica, riparazione cerchi affidabile, riparazione cerchi esperti, riparazione cerchi specializzati, riparazione cerchi auto professionale, riparazione cerchi auto rapida, riparazione cerchi auto economica, riparazione cerchi auto affidabile, riparazione cerchi auto esperti, riparazione cerchi auto specializzati, riparazione cerchi auto vicino a me, riparazione cerchi in lega vicino a me, cerchi in lega riparazione, cerchi in lega saldatura, cerchi in lega tornitura, cerchi in lega verniciatura, cerchi in lega diamantatura, cerchi in lega riparazione Moncalieri, cerchi in lega riparazione Torino, cerchi in lega riparazione Nichelino, cerchi in lega saldatura Moncalieri, cerchi in lega saldatura Torino, cerchi in lega saldatura Nichelino, cerchi in lega tornitura Moncalieri, cerchi in lega tornitura Torino, cerchi in lega tornitura Nichelino, cerchi in lega verniciatura Moncalieri, cerchi in lega verniciatura Torino, cerchi in lega verniciatura Nichelino, cerchi in lega diamantatura Moncalieri, cerchi in lega diamantatura Torino, cerchi in lega diamantatura Nichelino" />
       
       {/* Structured Data */}
