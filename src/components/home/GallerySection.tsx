@@ -44,23 +44,16 @@ const GallerySection = () => {
           {images.map((image) => (
             <div 
               key={image.id} 
-              className="group relative overflow-hidden rounded-3xl bg-card shadow-card hover:shadow-xl transition-all duration-300 aspect-square"
+              className="relative overflow-hidden rounded-3xl bg-card shadow-card aspect-square"
             >
               {/* Actual Image */}
               <img
                 src={image.src}
                 alt={image.alt}
                 title={image.title}
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                className="w-full h-full object-cover"
                 loading="lazy"
               />
-              
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <div className="text-white text-center">
-                  <p className="font-semibold">Visualizza dettagli</p>
-                </div>
-              </div>
             </div>
           ))}
         </div>
