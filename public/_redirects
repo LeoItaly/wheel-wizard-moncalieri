@@ -2,6 +2,12 @@
 
 https://officinaschettino.netlify.app/* https://cerchiinlegatorino.com/:splat 301!
 
+# Canonical redirects - ensure all variants point to canonical URLs
+
+/index.html / 301
+/home / 301
+/index / 301
+
 # SPA routing - handle all routes by serving index.html
 
 # But allow direct access to important files
