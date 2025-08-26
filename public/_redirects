@@ -1,5 +1,12 @@
 # Domain redirects
-https://officinaschettino.netlify.app/*  https://cerchiinlegatorino.com/:splat  301! 
+
+https://officinaschettino.netlify.app/* https://cerchiinlegatorino.com/:splat 301!
 
 # SPA routing - handle all routes by serving index.html
-/*    /index.html   200 
+
+# But allow direct access to important files
+
+/sitemap.xml /sitemap.xml 200
+/robots.txt /robots.txt 200
+/\_headers /\_headers 200
+/\* /index.html 200
