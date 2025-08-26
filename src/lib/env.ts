@@ -4,7 +4,7 @@
 
 export const ENV_CONFIG = {
   // Site URL - can be overridden by VITE_SITE_URL
-  SITE_URL: import.meta.env.VITE_SITE_URL || "https://cerchiinlegatorino.com",
+  SITE_URL: import.meta.env.VITE_SITE_URL || "https://cerchiinlegatorino.com/",
   
   // Site Information
   SITE_NAME: import.meta.env.VITE_SITE_NAME || "Officina Schettino",

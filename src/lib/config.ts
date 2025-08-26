@@ -41,8 +41,10 @@ export const SITE_CONFIG = {
 
 // Helper function to get full URL for a path
 export const getFullUrl = (path: string = ""): string => {
-  const cleanPath = path.startsWith("/") ? path : `/${path}`;
-  return `${SITE_CONFIG.SITE_URL}${cleanPath}`;
+  // Remove leading slash from path if present to avoid double slashes
+  const cleanPath = path.startsWith("/") ? path.slice(1) : path;
+  // If path is empty, return base URL; otherwise append path
+  return cleanPath ? `${SITE_CONFIG.SITE_URL}${cleanPath}` : SITE_CONFIG.SITE_URL;
 };
 
 // Helper function to get canonical URL for a page

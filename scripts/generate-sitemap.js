@@ -14,7 +14,7 @@ const __dirname = path.dirname(__filename);
 
 // Site configuration - matches src/lib/config.ts
 const SITE_CONFIG = {
-  SITE_URL: "https://cerchiinlegatorino.com",
+  SITE_URL: "https://cerchiinlegatorino.com/",
   SITE_NAME: "Officina Schettino",
 };
 
@@ -86,7 +86,13 @@ function generateSitemapXML() {
   const urlsetClose = "</urlset>";
 
   const urls = PAGES.map((page) => {
-    const fullUrl = `${SITE_CONFIG.SITE_URL}${page.path}`;
+    // Remove leading slash from path to avoid double slashes with base URL
+    const cleanPath = page.path.startsWith("/")
+      ? page.path.slice(1)
+      : page.path;
+    const fullUrl = cleanPath
+      ? `${SITE_CONFIG.SITE_URL}${cleanPath}`
+      : SITE_CONFIG.SITE_URL;
     return `  <url>
     <loc>${fullUrl}</loc>
     <lastmod>${page.lastmod}</lastmod>
@@ -109,7 +115,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: ${SITE_CONFIG.SITE_URL}/sitemap.xml
+Sitemap: ${SITE_CONFIG.SITE_URL}sitemap.xml
 
 # Disallow admin or private areas (if any)
 # Disallow: /admin/
@@ -159,7 +165,7 @@ function main() {
 }
 
 // Run if called directly
-if (import.meta.url === `file://${process.argv[1]}`) {
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
   main();
 }
 
